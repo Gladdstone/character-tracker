@@ -1,0 +1,29 @@
+page-character-select {
+
+    .character-display {
+
+        ion-card {
+            position: relative;
+            text-align: center;
+        }
+
+        .card-title {
+            color: #ffffff;
+            font-size: 2em;
+            font-weight: bold;                                 
+            position: absolute;
+            top: 36%;
+            width: 100%;
+        }
+
+        .card-subtitle {
+            color: #ffffff;
+            font-size: 1em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+        }
+
+    }
+
+}

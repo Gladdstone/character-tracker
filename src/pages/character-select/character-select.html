@@ -21,16 +21,11 @@
 <ion-content padding>
 
   <ion-content class="character-display">
-    <ion-card>
+    <ion-card *ngFor="let character of characters; index as i" (click)="selectCharacter($event)">
       <img src="assets/imgs/shield.jpg"/>
-      <div class="card-title">Character</div>
-      <div class="card-subtitle">Lvl1 Wizard</div>
+      <div class="card-title">{{character.name}}</div>
+      <div class="card-subtitle">Lvl{{character.level}} {{character.class}}</div>
     </ion-card>
-    <ion-card>
-        <img src="assets/imgs/shield.jpg"/>
-        <div class="card-title">Character</div>
-        <div class="card-subtitle">Lvl1 Fighter</div>
-      </ion-card>
   </ion-content>
 
 </ion-content>

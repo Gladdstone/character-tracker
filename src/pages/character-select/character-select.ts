@@ -15,11 +15,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CharacterSelectPage {
 
+  private characters = [
+    {
+      name: "Character",
+      class: "Wizard",
+      level: "3"
+    },
+    {
+      name: "Character",
+      class: "Cleric",
+      level: "1"
+    }
+  ];
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CharacterSelectPage');
+  }
+
+  selectCharacter(event) {
+    console.log(event);
   }
 
 }

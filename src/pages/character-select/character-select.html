@@ -21,7 +21,7 @@
 <ion-content padding>
 
   <ion-content class="character-display">
-    <ion-card *ngFor="let character of characters; index as i" (click)="selectCharacter($event)">
+    <ion-card *ngFor="let character of characters; index as i" (click)="selectCharacter(i)">
       <img src="assets/imgs/shield.jpg"/>
       <div class="card-title">{{character.name}}</div>
       <div class="card-subtitle">Lvl{{character.level}} {{character.class}}</div>

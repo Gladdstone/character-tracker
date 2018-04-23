@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
 //import { CharacterSelectPage } from '../character-select/character-select';
 
 /**

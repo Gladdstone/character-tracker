@@ -1,0 +1,57 @@
+<!--
+  Generated template for the CharacterMainPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="goToSelect()">Select</button>
+    </ion-buttons>
+    <ion-title>{{ character.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div id="section_top">
+    <div>
+      <ion-list>
+        <ion-item>Name: {{ character.name }}</ion-item>
+        <ion-item>Class: {{ character.class }}</ion-item>
+        <ion-item>Level: {{ character.level }} <button id="levelup" (click)="levelUp()"><ion-icon name="add"></ion-icon></button></ion-item>
+      </ion-list>
+    </div>
+    <div>
+      <img src="assets/imgs/shield.jpg">
+    </div>
+  </div>
+  <div id="section_bottom">
+    <ion-list>
+      <ion-item>Str: {{ character.str }}</ion-item>
+      <ion-item>Int: {{ character.int }}</ion-item>
+      <ion-item>Dex: {{ character.dex }}</ion-item>
+      <ion-item>Wis: {{ character.wis }}</ion-item>
+      <ion-item>Con: {{ character.con }}</ion-item>
+      <ion-item>Cha: {{ character.cha }}</ion-item>
+    </ion-list>
+    <div>
+      <div id="hp">
+        <h2>{{ character.hp }}</h2>
+        <div>
+          <button ion-button (click)="increaseHealth()"><ion-icon name="add"></ion-icon></button>
+          <button ion-button (click)="decreaseHealth()"><ion-icon name="remove"></ion-icon></button>
+        </div>
+      </div>
+      <ion-list>
+        <ion-item>Init: {{ character.init }}</ion-item>
+        <ion-item>BAB: {{ character.bab }}</ion-item>
+        <ion-item>AC: {{ character.ac }}</ion-item>
+        <ion-item>Speed: {{ character.speed }}</ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CharacterMainPage } from '../character-main/character-main';
+import { TabsPage } from '../tabs/tabs';
+
+import { CharacterArrProvider } from '../../providers/character-arr/character-arr';
 
 /**
  * Generated class for the CharacterSelectPage page.
@@ -16,44 +19,11 @@ import { CharacterMainPage } from '../character-main/character-main';
 })
 export class CharacterSelectPage {
 
-  private characters = [
-    {
-      name: "Selthas",
-      class: "Wizard",
-      level: 3,
-      hp: 24,
-      init: "+5",
-      bab: "+1",
-      ac: "13",
-      speed: "30",
-      str: "0",
-      int: "+5",
-      dex: "+1",
-      wis: "+2",
-      con: "+1",
-      cha: "0",
-      id: "001"
-    },
-    {
-      name: "Ben",
-      class: "Cleric",
-      level: 1,
-      hp: 20,
-      init: "+6",
-      bab: "+2",
-      ac: "16",
-      speed: "30",
-      str: "0",
-      int: "+2",
-      dex: "+2",
-      wis: "+4",
-      con: "+1",
-      cha: "+1",
-      id: "002"
-    }
-  ];
+  private characters;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private charArrProv: CharacterArrProvider, public navCtrl: NavController, public navParams: NavParams) {
+    this.characters = charArrProv.getArr();
+
     // If parameter exists, update database
     // TODO - how can I routinely update the database without monopolizing processing time?
     if(this.navParams.get("Character")) {

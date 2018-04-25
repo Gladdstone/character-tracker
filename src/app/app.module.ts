@@ -13,6 +13,8 @@ import { CharacterMainPage } from '../pages/character-main/character-main';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CharacterProvider } from '../providers/character/character';
+import { CharacterArrProvider } from '../providers/character-arr/character-arr';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CharacterProvider,
+    CharacterArrProvider
   ]
 })
 export class AppModule {}

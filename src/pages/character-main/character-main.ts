@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CharacterSelectPage } from '../character-select/character-select';
 
+import { CharacterProvider } from '../../providers/character/character';
+
 /**
  * Generated class for the CharacterMainPage page.
  *
@@ -16,12 +18,32 @@ import { CharacterSelectPage } from '../character-select/character-select';
 })
 export class CharacterMainPage {
 
-  character = {};
-  index = 0;
+  private character: any;
+  private index;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.character = this.navParams.get("Character");
-    this.index = this.navParams.get("Index");
+    if(this.navParams.get("Character")) {
+      this.character = this.navParams.get("Character");
+      this.index = this.navParams.get("Index");
+    } else {
+      this.character = {
+        name: "Selthas",
+        class: "Wizard",
+        level: 3,
+        hp: 24,
+        init: "+5",
+        bab: "+1",
+        ac: "13",
+        speed: "30",
+        str: "0",
+        int: "+5",
+        dex: "+1",
+        wis: "+2",
+        con: "+1",
+        cha: "0",
+        id: "001"
+      };
+    }
   }
 
   ionViewDidLoad() {
@@ -33,7 +55,7 @@ export class CharacterMainPage {
   }
 
   goToSelect() {
-    this.navCtrl.setRoot("CharacterSelectPage", {Character: this.character, Index: this.index}, {animate: true, direction: 'back'})
+    this.navCtrl.setRoot(CharacterSelectPage, {Character: this.character, Index: this.index}, {animate: true, direction: 'back'})
   }
 
   levelUp() {

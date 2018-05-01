@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
+import { Http } from '@angular/http';
 import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
-//import { CharacterSelectPage } from '../character-select/character-select';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,18 +18,45 @@ export class LoginPage {
 
   private username;
   private password;
+  private url = "http://localhost/sites/characterTracker";
+  private body = {
+    username: this.username,
+    password: this.password
+  };
+  data:any = {};
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public alertCtrl: AlertController, public http: Http, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  login() {
-    // TODO
-    this.navCtrl.setRoot('CharacterSelectPage', {}, {animate: true, direction: 'forward'});
+  login() {    
+    this.http.post(this.url + "/login.php", JSON.stringify(this.body))
+    .subscribe(data => {
+      this.data.response = data["_body"];
+      console.log(this.data);
+      this.navCtrl.setRoot('CharacterSelectPage', {}, {animate: true, direction: 'forward'});
+    }, error => {
+      console.log("Oooops!");
+    });
+    // this.navCtrl.setRoot('CharacterSelectPage', {}, {animate: true, direction: 'forward'});
   }
+
+  // sendLogin() {
+  //   return new Promise((resolve, reject) => {
+  //     this.http.post(this.apiUrl, JSON.stringify(this.body), {
+  //       headers: new HttpHeaders().set('Authorization', 'my-auth-token'),
+  //       params: new HttpParams().set('id', '3'),
+  //     })
+  //     .subscribe(res => {
+  //       resolve(res);
+  //     }, (err) => {
+  //       reject(err);
+  //     });
+  //   });
+  // }
 
   signup() {
     let alert = this.alertCtrl.create({

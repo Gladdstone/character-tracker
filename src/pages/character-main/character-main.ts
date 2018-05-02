@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CharacterSelectPage } from '../character-select/character-select';
 
 import { CharacterProvider } from '../../providers/character/character';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the CharacterMainPage page.

@@ -41,7 +41,8 @@ export class CharacterSelectPage {
 
   selectCharacter(index) {
     let character = this.characters[index];
-    this.navCtrl.setRoot(CharacterMainPage, {Character: character, Index: index}, {animate: true, direction: 'forward'});
+    // this.navCtrl.setRoot(CharacterMainPage, {Character: character, Index: index}, {animate: true, direction: 'forward'});
+    this.navCtrl.setRoot(TabsPage, {}, {animate: true, direction: "forward"});
   }
 
 }

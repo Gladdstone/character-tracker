@@ -1,0 +1,23 @@
+<!--
+  Generated template for the AddSpellPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add a Spell</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <ion-select>
+    <ion-option *ngFor="let spell of spellSelect"></ion-option>
+  </ion-select> -->
+  <ion-list *ngFor="let spell of spellSelect">
+    <ion-item (click)="add(spell)">{{spell}}</ion-item>
+  </ion-list>
+</ion-content>

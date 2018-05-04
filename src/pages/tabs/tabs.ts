@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CharacterMainPage } from '../character-main/character-main';
+import { InventoryPage } from '../inventory/inventory';
+import { SpellbookPage } from '../spellbook/spellbook';
 
 /**
  * Generated class for the TabsPage page.
@@ -15,8 +17,8 @@ export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
   tab1Root = CharacterMainPage;
-  tab2Root = CharacterMainPage;
-  tab3Root = CharacterMainPage;
+  tab2Root = InventoryPage;
+  tab3Root = SpellbookPage;
 
   constructor() {
 

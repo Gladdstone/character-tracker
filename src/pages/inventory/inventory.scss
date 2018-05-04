@@ -1,0 +1,29 @@
+page-inventory {
+
+    ion-content {
+
+        ion-footer {
+
+            ion-toolbar {
+
+                width: 100%;
+
+                button {
+                    background-color: transparent;
+                    font-size: 3rem;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                #arrow {
+                    float: right;
+                    text-align: right;
+                }
+
+            }
+
+        }
+
+    }
+
+}

@@ -17,7 +17,6 @@ export class CharacterArrProvider {
   }
 
   build(data) {
-    console.log("data 0", data[0]);
     for(let i = 0; i < data.length; i++) {
       this.characters[i] = data[i];
     }

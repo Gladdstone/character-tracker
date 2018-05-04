@@ -1,6 +1,6 @@
 {
   "name": "characterTracker",
-  "app_id": "",
+  "app_id": "2b633c7f",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

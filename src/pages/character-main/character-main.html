@@ -16,7 +16,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding (swipeleft)="onSwipeLeft();">
   <div id="section_top">
     <div>
       <ion-list>
@@ -54,9 +54,10 @@
       </ion-list>
     </div>
   </div>
-  <ion-tabs>
-    <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
-    <ion-tab [root]="tab2Root" tabTitle="Items" tabIcon="information-circle"></ion-tab>
-    <ion-tab [root]="tab3Root" tabTitle="Spells" tabIcon="bookmarks"></ion-tab>
-  </ion-tabs>
+  <ion-footer>
+    <ion-toolbar>
+      <button><ion-icon name="home"></ion-icon></button>
+      <button id="arrow"><ion-icon name="arrow-forward"></ion-icon></button>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>

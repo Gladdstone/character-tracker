@@ -4,6 +4,7 @@ import { CharacterSelectPage } from '../character-select/character-select';
 
 import { CharacterProvider } from '../../providers/character/character';
 import { LoginPage } from '../login/login';
+import { InventoryPage } from '../inventory/inventory';
 
 /**
  * Generated class for the CharacterMainPage page.
@@ -56,6 +57,7 @@ export class CharacterMainPage {
   }
 
   goToSelect() {
+    // this.navCtrl.pop();
     this.navCtrl.setRoot(CharacterSelectPage, {Character: this.character, Index: this.index}, {animate: true, direction: 'back'})
   }
 
@@ -65,6 +67,10 @@ export class CharacterMainPage {
 
   increaseHealth() {
     this.character.hp += 1;
+  }
+
+  onSwipeLeft() {
+    this.navCtrl.setRoot(InventoryPage, {Character: this.character, Index: this.index}, {animate: true, direction: 'forward'});
   }
 
 }

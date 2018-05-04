@@ -11,6 +11,9 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { CharacterSelectPage } from '../pages/character-select/character-select';
 import { CharacterMainPage } from '../pages/character-main/character-main';
+import { InventoryPage } from '../pages/inventory/inventory';
+import { SpellbookPage } from '../pages/spellbook/spellbook';
+import { AddSpellPage } from '../pages/add-spell/add-spell';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -18,6 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { CharacterProvider } from '../providers/character/character';
 import { CharacterArrProvider } from '../providers/character-arr/character-arr';
 import { DatabaseProvider } from '../providers/database/database';
+import { SpellbookProvider } from '../providers/spellbook/spellbook';
+import { InventoryProvider } from '../providers/inventory/inventory';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,9 @@ import { DatabaseProvider } from '../providers/database/database';
     LoginPage,
     CharacterSelectPage,
     CharacterMainPage,
+    InventoryPage,
+    SpellbookPage,
+    AddSpellPage,
     TabsPage
   ],
   imports: [
@@ -45,6 +53,9 @@ import { DatabaseProvider } from '../providers/database/database';
     LoginPage,
     CharacterSelectPage,
     CharacterMainPage,
+    InventoryPage,
+    SpellbookPage,
+    AddSpellPage,
     TabsPage
   ],
   providers: [
@@ -53,7 +64,9 @@ import { DatabaseProvider } from '../providers/database/database';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CharacterProvider,
     CharacterArrProvider,
-    DatabaseProvider
+    DatabaseProvider,
+    SpellbookProvider,
+    InventoryProvider
   ]
 })
 export class AppModule {}
